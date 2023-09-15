@@ -6,10 +6,10 @@ type Point struct {
 }
 
 var dir = []Point{
-	{-1, 0},
-	{1, 0},
 	{0, 1},
 	{0, -1},
+	{-1, 0},
+	{1, 0},
 }
 
 func walk(maze []string, wall string, cur Point, end Point, seen [][]bool, path []Point) ([]Point, bool) {
@@ -56,9 +56,9 @@ func MazeSolve(maze []string, wall string, start Point, end Point) ([]Point, []s
 
 	path, _ = walk(maze, wall, start, end, seen, path)
 
-	for _, p := range path {
+	for i, p := range path {
 		r := []rune(maze[p.Y])
-		r[p.X] = '+'
+		r[p.X] = rune(i + 64)
 		maze[p.Y] = string(r)
 	}
 
