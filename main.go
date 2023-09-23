@@ -1,26 +1,26 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/Arch-4ng3l/DSA/datastructures"
 )
 
 func main() {
-	linkedList := datastructures.NewLinkedList[int]()
-	linkedList.Prepand(10)
-	linkedList.Append(20)
-	linkedList.Print()
-	linkedList.Prepand(30)
-	linkedList.Print()
-	linkedList.Append(40)
-	linkedList.Print()
-	linkedList.InsertAt(5, 3)
-	linkedList.InsertAt(6, 3)
-	linkedList.InsertAt(7, 3)
-	linkedList.InsertAt(8, 3)
-	linkedList.Print()
-	linkedList.RemoveAt(3)
-	linkedList.Print()
-	linkedList.Remove(20)
-	linkedList.Print()
+	bst := datastructures.NewBst[int]()
+	bst.Push(10)
+	bst.Push(12)
+	bst.Push(11)
+	bst.Push(9)
+	bst.Push(8)
+
+	bst2 := datastructures.NewBst[int]()
+	bst2.Push(10)
+	bst2.Push(11)
+	bst2.Push(8)
+	bst2.Push(12)
+	bst2.Push(9)
+
+	fmt.Println(bst.IsEqual(bst2))
 
 }
